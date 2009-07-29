@@ -1,0 +1,10 @@
+{% if field.is_hidden %}
+  {{ field }}
+{% else %}
+  <div class="row {% if field.errors %}errors{% endif%}">
+    <label for="id_{{ field.name }}">{{ field.label }}</label>
+    {{ field }}
+    {% if field.errors %}<div class="errorlist">{{ field.errors|join:", " }}</div>{% endif %}
+    {% if field.help_text %}<p class="helptext">{{ field.help_text }}</p>{% endif %}
+  </div>
+{% endif %}
