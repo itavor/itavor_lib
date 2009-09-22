@@ -26,3 +26,5 @@ def cached(slot_name, timeout=None):
 #    return result
 
 #dispatcher.connect(get_something_complex.invalidate, django.db.models.signals.post_save, Model) 
+
+__all__ = ('cached',)

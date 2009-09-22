@@ -56,3 +56,4 @@ def json_view(func):
     wrap.__doc__ = func.__doc__
     return wrap
 
+__all__ = ('json_view',)

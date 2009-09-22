@@ -119,3 +119,5 @@ def render_paginated_to(func, template=None):
     wrapper.__dict__ = func.__dict__
     wrapper.__doc__ = func.__doc__
     return wrapper
+
+__all__ = ('render_to', 'render_paginated_to')

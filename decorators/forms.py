@@ -9,3 +9,5 @@ def post_required(func):
 
     post_wrapper.__name__ = func.__name__
     return post_wrapper
+
+__all__ = ('post_required',)

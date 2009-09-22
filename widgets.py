@@ -1,7 +1,9 @@
+from django import forms
 from django.forms import widgets
 from django.conf import settings
 from django.template.defaulttags import mark_safe
 from django.contrib.auth.models import User
+from django.utils.text import truncate_words
 
 class AutoCompleteWidget(widgets.MultiWidget):
 
@@ -51,13 +53,13 @@ class ForeignKeySearchInput(forms.HiddenInput):
     """
     class Media:
         css = {
-            'all': ('jquery.autocomplete.css',)
+            'all': ('css/jquery.autocomplete.css',)
         }
         js = (
-            'lib/jquery.js',
-            'lib/jquery.bgiframe.min.js',
-            'lib/jquery.ajaxQueue.js',
-            'jquery.autocomplete.js'
+            'js/jquery.js',
+            'js/jquery.bgiframe.pack.js',
+            'js/jquery.ajaxQueue.js',
+            'js/jquery.autocomplete.pack.js'
         )
 
     def label_for_value(self, value):
@@ -124,4 +126,3 @@ class ForeignKeySearchInput(forms.HiddenInput):
             'label': label,
             'name': name,
         }
-</select>
