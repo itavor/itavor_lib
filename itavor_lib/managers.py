@@ -25,11 +25,11 @@ http://www.djangosnippets.org/snippets/1773/
         qs = self._clone()
 
         gfk_fields = [g for g in self.model._meta.virtual_fields if isinstance(g, GenericForeignKey)]
-        
+
         ct_map = {}
         item_map = {}
         data_map = {}
-        
+
         for item in qs:
             for gfk in gfk_fields:
                 ct_id_field = self.model._meta.get_field(gfk.ct_field).column
